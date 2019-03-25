@@ -159,7 +159,7 @@
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content text-center">
-          <div class="modal-header">';
+          <div class="modal-header">'; 
           if($user_list[$i]->avatar == NULL)
             echo '<img src="img/img_formateur.jpg" class="card-img-top rounded-circle mx-auto image_portfolio" alt="Photo de profil">';
           else
