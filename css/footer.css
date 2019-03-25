@@ -1,0 +1,29 @@
+
+.gm-footer {
+    width: 98vw;
+    height: 170px;
+
+    color: rgb(20, 20, 20);
+    background-color: #f8f9fa;
+
+    box-shadow: 0px -15px 10px -15px rgba(17, 17, 17, 0.3);
+}
+
+.gm-footer .logo {
+    width: 138px;
+    height: 114px;
+}
+
+.scrollToBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 20px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    cursor: pointer; /* Add a mouse pointer on hover */
+
+    width: 40px !important;
+    height: 40px !important;
+
+    font-size: 24px !important;
+}

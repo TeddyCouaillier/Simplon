@@ -1,0 +1,117 @@
+body{
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.promo_nav a{
+	color: #333 !important;
+}
+
+.promo_nav :not(.active):hover{
+	color: red !important;
+}
+
+.promo_nav .active{
+	border-style: none !important;
+	border-bottom: 3px solid #dc3545 !important;
+}
+
+.promo_tab{
+	box-shadow: 0 0 5px #AAA;
+}
+
+.image_portfolio {
+	width: 150px;
+	height: 150px;
+	box-shadow: 0 0 5px #333;
+}
+
+.profil_portfolio {
+	background-color: white;
+	color: #dc3545;
+	font-size: 16px;
+	border: 1px solid #dc3545;
+}
+
+.profil_portfolio:hover {
+	background-color: #dc3545;
+	color: white;
+	border: 1px solid #dc3545;
+}
+
+.card_portfolio {
+	margin: 15px 0;
+	width: 250px;
+	border-style: none;
+}
+
+.card_portfolio a {
+	color: #666;
+	font-style: italic;
+}
+
+.p_portfolio {
+	height: 75px;
+}
+
+.p_profil {
+	height: auto;
+}
+
+.promo {
+	margin-top: 50px;
+}
+
+.link_promo {
+	margin-top: 50px;
+}
+
+.hr {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	color: #dc3545;
+	margin: 1em 0;
+	width: 100%;
+	text-align: center;
+}
+
+.hr::before,
+.hr::after {
+	content: '';
+
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	margin: 0 .5em;
+
+	border-bottom: 0.17em solid #dc3545;
+}
+
+.fab {
+	color: #333;
+	padding: 20px;
+}
+
+
+.index_img {
+	height: 40%;
+	width: 80%;
+	box-shadow: 0 0 5px #888;
+}
+
+.twitter-tweet-rendered {
+	box-shadow: 0 0 5px #888;
+}
+
