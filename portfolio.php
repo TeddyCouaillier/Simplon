@@ -169,7 +169,7 @@
               <h5 class="card-title font-weight-bold">'.$user_list[$i]->prenom.' '.$user_list[$i]->nom.'</h5>
             <div class="mb-2">';
           /*$tags = json_decode($user_list[$i]->tags);
-          for($j = 1; $j > sizeof($tags); $j++){
+          for($i = 1; $i > sizeof($tags); $i++){
             echo '<span class="badge badge-pill badge-secondary">'.$tags[$j].'</span>';
           }*/
           echo '</div>
