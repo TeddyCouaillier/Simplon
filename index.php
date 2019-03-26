@@ -64,9 +64,13 @@
 
     <div class="my-5 text-center status">
         <div class="container text-center my-4 py-3">
-            <h4> <i class="fab fa-facebook logo_main"></i> <i class="fab fa-twitter logo_main"></i> <i
-                    class="fab fa-instagram logo_main"></i>
-                <i class="fab fa-github logo_main"></i> </h4>
+            <h4> <a href="https://fr-fr.facebook.com/ecoledescodeurs/" target="_blank" id="social_icon"><i
+                        class="fab fa-facebook logo_main"></i></a>
+                <a href="https://twitter.com/simplon08?lang=fr" target="_blank" id="social_icon"><i
+                        class="fab fa-twitter logo_main"></i></a> 
+                        <a href="https://www.instagram.com/explore/locations/109669173/simplonco/?hl=fr" target="_blank" id="social_icon"><i class="fab fa-instagram logo_main"></i></a>
+                        <a href="https://github.com/SimplonCharleville" target="_blank" id="social_icon"><i class="fab fa-github logo_main"></i></a>
+                     </h4>
             <p class="text-muted italic"> 18A AVENUE GEORGES CORNEAU <br> CHARLEVILLE-MEZIERES</p>
             <button type="button" class="btn btn-danger mt-2" data-toggle="modal" data-target="#contactUs">NOUS
                 CONTACTER</button>
