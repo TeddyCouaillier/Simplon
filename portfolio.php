@@ -74,11 +74,11 @@
             }
             echo '<div id="link_promo'.$promos_list[$i]->id.'" class="tab-pane '.$class.' mt-4 fadeIn">';
               echo '<div class="row">
-                      <div class="col-md-4"></div>
-                      <div class="col-md-4 d-flex justify-content-center">
+                      <div class="col-lg-3 col-md-3 col-sm-1"></div>
+                      <div class="col-lg-6 col-md-6 col-sm-10 d-flex justify-content-center">
                         <span class="hr font-weight-bold">FORMATEUR</span>
                       </div>
-                      <div class="col-md-4"></div>
+                      <div class="col-lg-3 col-md-3 col-sm-1"></div>
                     </div>';
               echo '<div class="row justify-content-center">';
               for($j = 1; $j < sizeof($user_list); $j++){
@@ -109,11 +109,11 @@
             }  
             echo '</div>';
             echo '<div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4 d-flex justify-content-center">
+            <div class="col-lg-3 col-md-3 col-sm-1"></div>
+            <div class="col-lg-6 col-md-6 col-sm-10 d-flex justify-content-center">
               <span class="hr font-weight-bold">SIMPLONIEN</span>
             </div>
-            <div class="col-md-4"></div>
+            <div class="col-lg-3 col-md-3 col-sm-1"></div>
           </div>';
            echo '<div class="row justify-content-center">';
             for($j = 1; $j < sizeof($user_list); $j++){

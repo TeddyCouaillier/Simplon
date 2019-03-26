@@ -28,8 +28,8 @@
     <?php include('include/header.inc.php'); ?>
 
     <div class="row my-5 mx-auto" id="project">
-        <div class="col-md-2"></div>
-        <div class="col-md-2 py-5 project_content">
+        <div class="col-lg-2 col-md-1 col-sm-0 col-xs-0"></div>
+        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-1 py-2 project_content">
             <ul class="list-group">
                 <li class="list-group-item project_list"><a class="showSingle" target="div1"><i
                             class="fab fa-html5 icon_list"></i>HTML5<a></li>
@@ -45,7 +45,7 @@
 
 
         </div>
-        <div class="col-md-6 text-center  project_content">
+        <div class="col-lg-6 col-md-7 col-sm-9 col-xs-11 text-center  project_content">
             <div id="div_show" class="align-middle">
                 <p>
                     <img src="img/scm_logo_sm.png" id="logo_rotate"><br>
@@ -112,7 +112,7 @@
             </div>
 
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-lg-2 col-md-0 col-sm-0 col-xs-0"></div>
     </div>
 
 
