@@ -27,11 +27,4 @@
 
     $result->closeCursor();
 
-    for($i = 1; $i < sizeof($decoded_users); $i++){
-        $tags = json_decode($decoded_users[$i]->tags,true);
-        for($j = 0; $j < sizeof($tags);$j++){
-            echo $tags[$j]["label"].'<br>';
-        }
-    }
-
 ?>

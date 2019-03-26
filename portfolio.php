@@ -72,7 +72,6 @@
             {
               $class ="";
             }
-
             echo '<div id="link_promo'.$promos_list[$i]->id.'" class="tab-pane '.$class.' mt-4 fadeIn">';
               echo '<div class="row">
                       <div class="col-md-4"></div>
@@ -88,19 +87,19 @@
                 if($user_list[$j]->avatar == NULL)
                   echo '<img src="img/img_formateur.jpg" class="card-img-top rounded-circle mx-auto image_portfolio" alt="Photo de profil">';
                 else
-                  echo '<img src="'.$user_list[$j]->avatar.'" class="card-img-top rounded-circle mx-auto image_portfolio" alt="Photo de profil">';
-               
+                  echo '<img src="'.$user_list[$j]->avatar.'" class="card-img-top rounded-circle mx-auto image_portfolio" alt="Photo de profil">';            
                 echo '<div class="card-body">
                 <h5 class="card-title font-weight-bold">'.$user_list[$j]->prenom.' '.$user_list[$j]->nom.'</h5>
                 <p class="p_portfolio">';
-                $tags = json_decode($user_list[$j]->tags);
-                for($k = 1; $k < sizeof($tags);$k++){
-                  echo '<span class="badge badge-pill badge-secondary">'.$tags[$k].'</span>';
-                } 
-                if(sizeof($tags) == 0)
+                $tags = json_decode($user_list[$j]->tags,true);
+                if(sizeof($tags)>0){
+
+                  for($k = 0; $k < sizeof($tags);$k++){
+                    echo '<span class="badge badge-pill badge-secondary">'.$tags[$k]["label"].'</span>';
+                  }    
+                }
+                else
                   echo '<span class="badge badge-pill badge-secondary">Aucun tag</span>';
-                if($user_list[$j]->cv_link != NULL)
-                  echo '<br><a href="'.$user_list[$j]->cv_link.'" target="_blank">Site internet</a>';
                 echo '<br><br></p>
                 <button type="button" class="btn btn-danger btn-lg btn-block profil_portfolio" data-toggle="modal"
                   data-target="#profil_'.$user_list[$j]->id.'">PROFIL</button>
@@ -123,21 +122,19 @@
                 if($user_list[$j]->avatar == NULL)
                   echo '<img src="img/img_formateur.jpg" class="card-img-top rounded-circle mx-auto image_portfolio" alt="Photo de profil">';
                 else
-                  echo '<img src="'.$user_list[$j]->avatar.'" class="card-img-top rounded-circle mx-auto image_portfolio" alt="Photo de profil">';
-               
+                  echo '<img src="'.$user_list[$j]->avatar.'" class="card-img-top rounded-circle mx-auto image_portfolio" alt="Photo de profil">';           
                 echo '<div class="card-body">
                 <h5 class="card-title font-weight-bold">'.$user_list[$j]->prenom.' '.$user_list[$j]->nom.'</h5>
                 <p class="p_portfolio">';
+                $tags = json_decode($user_list[$j]->tags,true);
+                if(sizeof($tags)>0){
 
-                $tags = json_decode($user_list[$j]->tags);
-                for($k = 1; $k < sizeof($tags);$k++){
-                  echo '<span class="badge badge-pill badge-secondary">'.$tags[$k].'</span>';
+                  for($k = 0; $k < sizeof($tags);$k++){
+                    echo '<span class="badge badge-pill badge-secondary">'.$tags[$k]["label"].'</span>';
+                  }    
                 }
-
-                if(sizeof($tags) <= 0)
+                else
                   echo '<span class="badge badge-pill badge-secondary">Aucun tag</span>';
-                if($user_list[$j]->cv_link != NULL)
-                  echo '<br><a href="'.$user_list[$j]->cv_link.'"target="_blank">Site internet</a>';
                 echo '<br><br></p>
                 <button type="button" class="btn btn-danger btn-lg btn-block profil_portfolio" data-toggle="modal"
                   data-target="#profil_'.$user_list[$j]->id.'">PROFIL</button>
@@ -147,13 +144,12 @@
             }
             echo '</div>';
             $first = false;
-            echo '</div>';
-            
+            echo '</div>'; 
           }
           echo '</div>';
   ?>
-  <?php
-
+    <?php
+     
   for($i = 1; $i <sizeof($user_list); $i++){
     echo '<div class="modal fade" id="profil_'.$user_list[$i]->id.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
       aria-hidden="true">
@@ -168,10 +164,17 @@
             <div class="modal-body col-10 offset-1">
               <h5 class="card-title font-weight-bold">'.$user_list[$i]->prenom.' '.$user_list[$i]->nom.'</h5>
             <div class="mb-2">';
-          /*$tags = json_decode($user_list[$i]->tags);
-          for($i = 1; $i > sizeof($tags); $i++){
-            echo '<span class="badge badge-pill badge-secondary">'.$tags[$j].'</span>';
-          }*/
+
+            $tags = json_decode($user_list[$i]->tags,true);
+            if(sizeof($tags)>0){
+              for($k = 0; $k < sizeof($tags);$k++){
+              
+                  echo '<span class="badge badge-pill badge-secondary">'.$tags[$k]["label"].'</span>';
+              }
+            }
+            else{
+              echo '<span class="badge badge-pill badge-secondary">Aucun tag</span>';
+            }
           echo '</div>
             <p class="p_profil">'.
           $user_list[$i]->mail.'<br>';
@@ -183,7 +186,6 @@
           <a href="'.$user_list[$i]->cv_link.'"target="_blank"><button type="button" class="btn btn-danger link_profil mb-2">Site
               internet</button></a>
           <a href="'.$user_list[$i]->cv_link.'"target="_blank"><button type="button" class="btn btn-danger link_profil mb-2">Curriculum Vitae</button></a><br>
-
           <div class="form-group">
             <button type="button" id="button_contact" class="btn btn-block btn-danger mx-auto">PRENDRE CONTACT</button>
           </div>
@@ -201,7 +203,7 @@
             <img src="img/scm_logo_md.png" class="mx-auto modal_logo">
           </div>
           <div class="modal-body col-10 offset-1">
-            <form action="form.php" method="post"> 
+            <form action="form.php" method="post">
               <div class="form-group">
                 <input type="text" class="form-control mx-auto input_form" id="contact_username"
                   placeholder="Nom Prenom">
