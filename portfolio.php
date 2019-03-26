@@ -135,7 +135,7 @@
                 }
                 else
                   echo '<span class="badge badge-pill badge-secondary">Aucun tag</span>';
-                echo '<br><br></p>
+                echo '</p>
                 <button type="button" class="btn btn-danger btn-lg btn-block profil_portfolio" data-toggle="modal"
                   data-target="#profil_'.$user_list[$j]->id.'">PROFIL</button>
                 </div>

@@ -52,11 +52,19 @@ body{
 }
 
 .p_portfolio {
-	height: 75px;
+	min-height: 70px;
+	max-height: 70px;
+	overflow: auto;
 }
 
 .p_profil {
 	height: auto;
+}
+
+h5{
+	height: 50px;
+	overflow: auto;
+	margin-bottom: 0 !important;
 }
 
 .promo {
