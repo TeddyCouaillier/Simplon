@@ -95,14 +95,4 @@ body {
 	width: 50%;
 }
 
-.link_profil {
-	width: 49%;
-	border: 1px solid #dc3545 !important;
-	color: #dc3545 !important;
-	background-color: #FFF !important;
-}
 
-.link_profil:hover {
-	background-color: #dc3545 !important;
-	color: #FFF !important;
-}

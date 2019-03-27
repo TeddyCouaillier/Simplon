@@ -151,7 +151,7 @@
     <?php
      
   for($i = 1; $i <sizeof($user_list); $i++){
-    echo '<div class="modal fade" id="profil_'.$user_list[$i]->id.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    echo '<div class="modal fade more" id="profil_'.$user_list[$i]->id.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content text-center">
@@ -182,12 +182,18 @@
             echo '<i>Pas de description</i>';
           else  
             echo '<i>'.$user_list[$i]->description.'</i>';
-          echo'</p>
-          <a href="'.$user_list[$i]->cv_link.'"target="_blank"><button type="button" class="btn btn-danger link_profil mb-2">Site
-              internet</button></a>
-          <a href="'.$user_list[$i]->cv_link.'"target="_blank"><button type="button" class="btn btn-danger link_profil mb-2">Curriculum Vitae</button></a><br>
-          <div class="form-group">
-            <button type="button" id="button_contact" class="btn btn-block btn-danger mx-auto">PRENDRE CONTACT</button>
+          echo'</p>';
+          if(strlen($user_list[$i]->cv_link)>0){
+            echo '<a href="'.$user_list[$i]->cv_link.'"target="_blank"><button type="button" class="btn btn-danger link_profil mb-2">Site
+              internet</button></a>';
+          }
+          else{
+            echo '<a class="data-toggle="tooltip" data-placement="right" title="Pas de site"><button type="button" class="btn btn-danger link_profil mb-2" disabled
+            >Site internet</button></a>';
+          }
+          echo '<div class="form-group">
+            <button type="button" id="button_contact" class="btn btn-block btn-danger mx-auto" data-toggle="modal"
+            data-target="#contact">PRENDRE CONTACT</button>
           </div>
         </div>
       </div>
@@ -195,14 +201,16 @@
   </div>';
 }
 ?>
-    <div class="modal fade " id="profil_contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+
+
+    <div class="modal fade " id="contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content text-center">
           <div class="modal-header">
             <img src="img/scm_logo_md.png" class="mx-auto modal_logo">
           </div>
-          <div class="modal-body col-10 offset-1">
+         <div class="modal-body col-10 offset-1">
             <form action="form.php" method="post">
               <div class="form-group">
                 <input type="text" class="form-control mx-auto input_form" id="contact_username"
@@ -238,7 +246,7 @@
     <script src="js/script.js"></script>
     <script>
       $("#button_contact").click(function () {
-        $("#profil_more").modal('toggle');
+        $(".more").modal('toggle');
         $('.modal-backdrop').remove();
         $("#profil_contact").modal();
       });

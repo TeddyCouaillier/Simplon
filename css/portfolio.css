@@ -123,3 +123,24 @@ h5{
 	box-shadow: 0 0 5px #888;
 }
 
+.link_profil {
+	width: 49%;
+	border: 1px solid #dc3545 !important;
+	color: #dc3545 !important;
+	background-color: #FFF !important;
+}
+
+.link_profil:hover {
+	background-color: #dc3545 !important;
+	color: #FFF !important;
+}
+
+button[disabled=disabled], button:disabled{
+	background-color: #F8F8F8 !important;
+
+
+}
+button[disabled=disabled]:hover, button:disabled:hover{
+	background-color: #F8F8F8 !important;
+	color: #dc3545 !important;
+}
